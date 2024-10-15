@@ -1,0 +1,283 @@
+// variable
+$common-width: 1280px;
+$header-width: 1300px;
+$section-width: 1276px;
+$footer-width: calc(1500px + 32px);
+$mobile-width: 320px;
+$tablet-width: 768px;
+$tablet-large-width: 820px;
+$laptop-width: 1024px;
+$desktop-width: 1440px;
+$font: 'KakaoBig';
+$font-g: 'Gilroy';
+$color-block: #191919;
+$color-yellow: #FFE100;
+$color-yellow01: #FFB500;
+$color-gray: #999999;
+
+// mixin
+@mixin mobile {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+// 768px ~ 1439px
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+// 1024px ~ 1440px
+@mixin laptop {
+  @media (min-width: #{$laptop-width}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+// 1441px ~
+@mixin desktop {
+  @media (min-width: #{$desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin font-64 {
+	font-size: 6.4rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 3rem;
+  }
+}
+@mixin font-60 {
+	font-size: 6rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 2.4rem;
+  }
+}
+@mixin font-52 {
+	font-size: 5.2rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 2.4rem;
+  }
+}
+@mixin font-38 {
+	font-size: 3.8rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 2.4rem;
+  }
+}
+@mixin font-30 {
+	font-size: 3rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 2.4rem;
+  }
+}
+@mixin font-21 {
+	font-size: 2.1rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.8rem;
+  }
+}
+@mixin font-20 {
+	font-size: 2rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.8rem;
+  }
+}
+@mixin font-18 {
+	font-size: 1.8rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.2rem;
+  }
+}
+@mixin font-16 {
+	font-size: 1.6rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.4rem;
+  }
+}
+@mixin font-14 {
+	font-size: 1.4rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.4rem;
+  }
+}
+@mixin font-12 {
+	font-size: 1.2rem;
+	@media (max-width: #{$desktop-width - 1px}) {
+    font-size: 1.2rem;
+  }
+}
+
+@mixin col-3 {
+	flex: calc(100% / 4);
+	max-width: calc(100% / 4 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+	}
+	@include laptop {
+		flex: calc(100% / 2);
+		flex-wrap: wrap;
+		max-width: calc(100% / 2 - 1rem);
+		margin-bottom: 1rem;
+		&:nth-child(n + 3) {
+			margin-bottom: 0rem;
+		}
+	}
+}
+@mixin col-4 {
+	flex: calc(100% / 3);
+	max-width: calc(100% / 3 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 4rem;
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+	}
+	@include tablet {
+		flex: calc(100% / 3);
+		max-width: calc(100% / 3 - 1rem);
+		margin-bottom: 4rem;
+		&:nth-child(n + 4) {
+			margin-bottom: 0rem;
+		}
+	}
+}
+@mixin col-6 {
+	flex: calc(100% / 2);
+	max-width: calc(100% / 2 - 6rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+	}
+	@include tablet {
+		flex: calc(100% / 2);
+		max-width: calc(100% / 2 - 3rem);
+	}
+}
+@mixin col-8 {
+	flex: calc(100% / 1.5);
+	max-width: calc(100% / 1.5 - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+	}
+}
+@mixin col-9 {
+	flex: calc(75%);
+	max-width: calc(75% - 1rem);
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+	}
+}
+@mixin col-12 {
+	flex: 100%;
+	max-width: 100%;
+	@include mobile {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+@mixin all-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@content;
+}
+@mixin v-center {
+	display: flex;
+	align-items: center;
+	@content;
+}
+@mixin h-center {
+	display: flex;
+	justify-content: center;
+	@content;
+}
+@mixin flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+@mixin flex-wrap {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+@mixin position-center-all {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+@mixin position-center-y {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+@mixin position-center-x {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@mixin text-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+@mixin text-line-limit {
+	display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+}
+@mixin text-underline {
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+//component
+@mixin common-btn {
+	@include all-center;
+  width: 22rem;
+  height: 5.6rem;
+  border: 3px solid #fff;
+  border-radius: 28px;
+  color: #fff;
+  font-weight: 700;
+	@include font-16;
+  cursor: pointer;
+	@content;
+}
+@mixin m-overflow {
+	overflow-x: auto;
+	white-space: nowrap;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@content;
+}
+

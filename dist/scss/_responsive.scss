@@ -1,0 +1,232 @@
+// resonsive contents styles
+@include mobile {
+  .main-visual {
+    .main-slide-cont {
+      height: 63rem;
+      padding: 0 20px;
+    }
+    .title-box {
+      .main-visual-title {
+        margin-bottom: 2.4rem;
+      }
+    }
+    .swiper-control {
+      .swiper-btn {
+        width: 4rem;
+        height: 4rem;
+        &.prev {
+          margin-right: 3.5rem;
+        }
+        &.next {
+          margin-left: 3.5rem;
+        }
+      }
+    }
+  }
+
+  .sec-connect {
+    padding-top: 8rem;
+    .col-wrap {
+      flex-direction: column;
+      margin-bottom: 4em;
+    }
+    .left-col {
+      margin-top: 0rem;
+    }
+    .sc-title {
+      margin-bottom: 4.3rem;
+      .last {
+        &::after {
+          right: -6rem;
+          width: 5.3rem;
+          height: 2.9rem;
+        }
+      }
+    }
+    .solution-item {
+      margin-bottom: 4rem;
+      .item-bg {
+        width: 100%;
+        min-height: 19rem;
+        &[data-solution-left="0"] {
+          background-image: url('../../images/m-solution-left-item01.png');
+        }
+        &[data-solution-left="1"] {
+          background-image: url('../../images/m-solution-left-item02.png');
+        }
+        &[data-solution-left="2"] {
+          background-image: url('../../images/m-solution-left-item03.png');
+        }
+        &[data-solution-left="3"] {
+          background-image: url('../../images/m-solution-left-item04.png');
+        }
+        &[data-solution-right="0"] {
+          background-image: url('../../images/m-solution-right-item01.png');
+        }
+        &[data-solution-right="1"] {
+          background-image: url('../../images/m-solution-right-item02.png');
+        }
+        &[data-solution-right="2"] {
+          background-image: url('../../images/m-solution-right-item03.png');
+        }
+        &[data-solution-right="3"] {
+          background-image: url('../../images/m-solution-right-item04.png');
+        }
+        &[data-solution-right="4"] {
+          background-image: url('../../images/m-solution-right-item05.png');
+        }
+      }
+      .tag-box {
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        .tag-item {
+          padding: 0.4rem 0.9rem;
+          margin-bottom: 0.4rem;
+          border-radius: 23px;
+          + .tag-item {
+            margin-left: 0.2rem;
+          }
+        }
+      }
+      &::after {
+        height: 0.1rem;
+        margin-top: 4rem;
+      }
+    }
+    .btn-more {
+      .ico-more {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 1.6rem;
+      }
+    }
+  }
+
+  .sec-service {
+    padding-top: 8rem;
+    .sc-title {
+      margin-bottom: 4rem;
+    }
+    .slider-container {
+      .slider {
+        margin-bottom: 2rem;
+        .card-group {
+          min-width: auto;
+          animation: scroll-x 30s linear infinite;
+          .card-item {
+            margin-right: 2rem;
+            width: 18rem;
+            height: 18rem;
+          }
+        }
+        &.reverse {
+          margin-bottom: 0;
+          .card-group {
+            animation-delay: -2s;
+          }
+        }
+      }
+    }
+  }
+
+  .sec-customer-banner {
+    width: 100%;
+    margin: 8rem auto 0;
+    background-image: url('../../images/m-customer-banner.png');
+    border-radius: initial;
+    .banner-wrap {
+      flex-direction: column;
+      justify-content: center;
+      height: 26.4rem;
+      .sc-title {
+        margin-bottom: 2.8rem;
+        h2 {
+          text-align: center;
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .sec-business {
+    padding-top: 8rem;
+    .sc-title {
+      margin-bottom: 4rem;
+    }
+    .flex-column {
+      flex-direction: column;
+    }
+  }
+
+  .sec-inquiry-banner {
+    margin: 8rem auto 0;
+    background-image: url('../../images/m-global-banner-bg.jpg');
+    background-color: initial;
+    background-position: center;
+    background-size: 100%;
+    .banner-wrap {
+      flex-direction: column;
+      justify-content: center;
+      height: 26.4rem;
+      .sc-title {
+        margin-bottom: 2.8rem;
+        h2 {
+          text-align: center;
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@include tablet {
+  .sec-connect .col-wrap {
+    flex-direction: initial;
+  }
+  .sec-connect .left-col {
+    margin-top: -27rem;
+  }
+  .sec-business {
+    padding-top: 8rem;
+    .sc-title {
+      margin-bottom: 4rem;
+    }
+    .flex-column {
+      flex-direction:initial;
+    }
+  }
+  .sec-customer-banner {
+    background-image: url('../../images/customer-banner.png');
+    background-size: cover;
+  }
+  .sec-inquiry-banner {
+    background-image: url('../../images/global-banner-bg.jpg');
+  }
+    
+}
+@include laptop {
+  .sec-connect .solution-item .item-bg {
+    min-height: 31.8rem;
+  }
+  .sec-customer-banner {
+    width: 100%;
+    background-image: url('../../images/customer-banner.png');
+    background-size: cover;
+  }
+  .sec-service .slider-container .slider .card-group .card-item {
+    width: 25rem;
+    height: 25rem;
+    margin-right: 2rem;
+  }
+}
+@include desktop {
+}
+
